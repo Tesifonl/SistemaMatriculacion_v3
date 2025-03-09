@@ -103,11 +103,12 @@ public class Matriculas  {
 			if (coleccionMatriculas.contains(matricula)) {
 				//coleccionMatriculas.remove(matricula);
 				
-				for(Matricula matriculaArray:coleccionMatriculas) {
-					if (matriculaArray.equals(matricula)) {
-						matricula.setFechaAnulacion(LocalDate.now());;
-					}
-				}
+				 for (int i=0;i<coleccionMatriculas.size();i++) {
+						if(coleccionMatriculas.get(i).equals(matricula)) {
+							Matricula matriculaElegida=coleccionMatriculas.get(i);
+							matriculaElegida.setFechaAnulacion(LocalDate.now());;
+							}
+				 }
 			}
 			else{
 				throw new OperationNotSupportedException("ERROR: No existe ningún alumno como el indicado.");
